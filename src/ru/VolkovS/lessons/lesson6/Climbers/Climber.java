@@ -6,32 +6,16 @@ public class Climber {
 
     public Climber(String name, String country) {
 
-        setName(name);
-        setCountryClimber(country);
-    }
-
-    public void setName(String name) {
 
         if (name == null || name.length() < 3) {
-            throw new IllegalArgumentException("name не менее 3 символов");
+            throw new IllegalArgumentException("Exception: name не менее 3 символов");
         }
-        this.name = name;
-    }
-
-    public void setCountryClimber(String country) {
-
         if (country == null || country.length() <= 5) {
-            throw new IllegalArgumentException("Country не менее 5 символов");
+            throw new IllegalArgumentException("Exception: Country не менее 5 символов");
         }
+
+        this.name = name;
         this.country = country;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getCountryClimber() {
-        return country;
     }
 
     public String getFullName() {

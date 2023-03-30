@@ -6,14 +6,16 @@ public class Mountains {
     private int height;
 
     public Mountains(String name, String country, int height) {
-        setName(name);
-        setСountry(country);
-        setHeight(height);
+
+        this.name = name;
+        this.country = country;
+        this.height = height;
+
     }
 
     public void setName(String name) {
         if (name == null || name.length() < 4) {
-            throw new IllegalArgumentException("name не менее 4 символов");
+            throw new IllegalArgumentException("Exception: name не менее 4 символов");
         }
         this.name = name;
     }
@@ -24,18 +26,18 @@ public class Mountains {
 
     public void setСountry(String country) {
         if (country == null || country.length() < 4) {
-            throw new IllegalArgumentException("country не менее 4 символов");
+            throw new IllegalArgumentException("Exception: country не менее 4 символов");
         }
         this.country = country;
     }
 
     public String getСountry() {
-        return name;
+        return country;
     }
 
     public void setHeight(int height) {
         if (height < 100) {
-            throw new IllegalArgumentException("height должно быть больше 100 метров");
+            throw new IllegalArgumentException("Exception: height должно быть больше 100 метров");
         }
         this.height = height;
     }
