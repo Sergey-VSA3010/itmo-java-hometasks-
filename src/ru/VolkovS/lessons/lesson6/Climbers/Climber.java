@@ -4,6 +4,13 @@ public class Climber {
     public String name;
     public String country;
 
+    @Override
+    public String toString() {
+        return
+                "name=" + name + '\'' +
+                ", country='" + country + '\'';
+    }
+
     public Climber(String name, String country) {
 
 
@@ -18,9 +25,8 @@ public class Climber {
         this.country = country;
     }
 
-    public String getFullName() {
-        return   "Climber{" + "name='" + name + '\'' + "," +
-                " countyOfResidence='" + country + '\'' + '}';
+    public String fullName() {
+        return    "name= " + name +   "," + " country= " + country   ;
 
     }
 }

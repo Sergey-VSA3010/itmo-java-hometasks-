@@ -1,4 +1,5 @@
 package ru.VolkovS.lessons.lesson6.Climbers;
+
 import java.util.Arrays;
 
 public class Group {
@@ -6,7 +7,8 @@ public class Group {
     private boolean groupRecruitment;
     private Mountains mountains;
     public int groupSize;
-    private Climber[] climber;
+    private Climber[] climbers;
+
     public Group(boolean groupRecruitment, Mountains mountains, int groupSize) {
         setGroupRecruitment(groupRecruitment);
         setMountain(mountains);
@@ -30,7 +32,7 @@ public class Group {
             throw new IllegalArgumentException("Exception: groupSize < 1");
 
         }
-        this.climber = new Climber[groupSize];
+        this.climbers = new Climber[groupSize];
     }
 
     public void setMountain(Mountains mountain) {
@@ -49,7 +51,7 @@ public class Group {
     }
 
     public Climber[] getClimber() {
-        return climber;
+        return climbers;
     }
 
     public Mountains getMountain() {
@@ -60,27 +62,32 @@ public class Group {
         if (climber == null) {
             throw new IllegalArgumentException("Exception: Climber must be > 1");
         }
-        if (groupRecruitment == true) {
+        if (this.groupRecruitment) {
 
-            for (int i = 0; i < climber.length; i++) {
-                if (climber[i] == null) {
-                    climber[i] = climber;
+            for (int i = 0; i < this.climbers.length; i++) {
+                if (this.climbers[i] == null) {
+                    this.climbers[i] = climber;
 
-                    if (i == climber.length - 1) setGroupRecruitment(false);
+                    if (i == this.climbers.length - 1) setGroupRecruitment(false);
                     return;
                 }
             }
 
         } else {
             setGroupRecruitment(false);
+
             System.out.println("Recruitment is over");
         }
 
     }
 
-    public String getfullGroup() {
-        return "Group{" + groupRecruitment + ",Climber " + climber +
-                ",mountain " +  mountains + ",groupSize " + groupSize + '}';
+    public String over() {
+        return "The group consists of:";
+    }
+
+    public String fullGroup() {
+        return  over() + " Climber " + Arrays.toString(climbers) +
+                " ,mountain " + mountains.fullNameM() + " ,groupSize " + groupSize + '}';
     }
 
 }

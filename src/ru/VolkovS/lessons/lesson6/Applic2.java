@@ -11,7 +11,7 @@ public class Applic2 {
         Climber climber2 = new Climber("Vlad", "Russia");
         Climber climber3 = new Climber("Gans", "Germany");
 
-        Climber[] climber = {climber1, climber2, climber3};
+        Climber[] climbers = {climber1, climber2, climber3};
 
         Mountains mountain1 = new Mountains("Kazbek", "Russia", 5033);
         Mountains mountain2 = new Mountains("Everest", "Nepal", 8848);
@@ -27,24 +27,24 @@ public class Applic2 {
 
         //System.out.println(mountain3.getFullName());
 
-      //  System.out.println(climber2.getFullName());
+       //System.out.println(climbers.length);
         //System.out.println(mountain3.getHeight());
         //System.out.println(mountain3.getName());
 
         for (int i = 0; i < 3; i++) {
-            group[0].addClimber(climber[i]);
+            group[0].addClimber(climbers[i]);
 
         }
 
         for (int i = 0; i < 2; i++) {
-           group[1].addClimber(climber[i]);
+           group[1].addClimber(climbers[i]);
         }
         for (int i = 1; i < 3; i++) {
-            group[2].addClimber(climber[i]);
+            group[2].addClimber(climbers[i]);
         }
-        System.out.println(group1.getfullGroup());
+        //System.out.println(group1.fullGroup());
         for(Group groups: group){
-            System.out.println(group);
+            System.out.println(groups.fullGroup());
         }
     }
 

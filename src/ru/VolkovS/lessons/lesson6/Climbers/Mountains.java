@@ -46,7 +46,7 @@ public class Mountains {
         return height;
     }
 
-    public String getFullName() {
+    public String fullNameM() {
         String fullName = name + " " + country + " " + height;
         return fullName;
     }
