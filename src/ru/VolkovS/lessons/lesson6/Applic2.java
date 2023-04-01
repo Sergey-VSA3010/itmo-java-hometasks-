@@ -32,19 +32,19 @@ public class Applic2 {
         //System.out.println(mountain3.getName());
 
         for (int i = 0; i < 3; i++) {
-            group[0].addClimber(climber[0]);
+            group[0].addClimber(climber[i]);
 
         }
 
         for (int i = 0; i < 2; i++) {
-           group[1].addClimber(climber[1]);
+           group[1].addClimber(climber[i]);
         }
         for (int i = 1; i < 3; i++) {
-            group[2].addClimber(climber[2]);
+            group[2].addClimber(climber[i]);
         }
         System.out.println(group1.getfullGroup());
         for(Group groups: group){
-            System.out.println(????);
+            System.out.println(group);
         }
     }
 

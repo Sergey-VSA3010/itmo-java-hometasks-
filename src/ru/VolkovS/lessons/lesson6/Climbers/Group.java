@@ -1,4 +1,5 @@
 package ru.VolkovS.lessons.lesson6.Climbers;
+import java.util.Arrays;
 
 public class Group {
 
@@ -39,15 +40,15 @@ public class Group {
         this.mountains = mountain;
     }
 
-    public int getSizeGroup() {
+    public int getGroupSize() {
         return groupSize;
     }
 
-    public boolean getgroupRecruitment() {
+    public boolean getGroupRecruitment() {
         return groupRecruitment;
     }
 
-    public Climber[] getClimbers() {
+    public Climber[] getClimber() {
         return climber;
     }
 
@@ -59,11 +60,13 @@ public class Group {
         if (climber == null) {
             throw new IllegalArgumentException("Exception: Climber must be > 1");
         }
-        if (this.groupRecruitment == true) {
-            for (int i = 0; i < climber.length(); i++) {
+        if (groupRecruitment == true) {
+
+            for (int i = 0; i < climber.length; i++) {
                 if (climber[i] == null) {
                     climber[i] = climber;
-                    if (i == climber.length() - 1) setGroupRecruitment(false);
+
+                    if (i == climber.length - 1) setGroupRecruitment(false);
                     return;
                 }
             }
@@ -74,9 +77,10 @@ public class Group {
         }
 
     }
+
     public String getfullGroup() {
-        return "Group " + this.groupRecruitment + ",Climber " + getClimbers() +
-                ",mountain " +  /*????*/",groupSize " + groupSize + '}';
+        return "Group{" + groupRecruitment + ",Climber " + climber +
+                ",mountain " +  mountains + ",groupSize " + groupSize + '}';
     }
 
 }

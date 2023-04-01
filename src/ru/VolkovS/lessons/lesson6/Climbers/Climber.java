@@ -19,8 +19,9 @@ public class Climber {
     }
 
     public String getFullName() {
-        String fullName = name + " " + country;
-        return fullName;
+        return   "Climber{" + "name='" + name + '\'' + "," +
+                " countyOfResidence='" + country + '\'' + '}';
+
     }
 }
 
